@@ -1,0 +1,91 @@
+import Image from "next/image";
+import type { SiteDictionary } from "@/i18n/types";
+import styles from "./About.module.css";
+
+type AboutProps = {
+  content: SiteDictionary["about"];
+};
+
+const About = ({ content }: AboutProps) => {
+  return (
+    <section data-editorial-scene className={styles.section}>
+      <div data-section-content className={styles.inner}>
+        <div className={styles.content}>
+          <h2 className={styles.title} data-motion-layer="primary">
+            {content.quote}
+          </h2>
+
+          <div className={styles.biography} data-motion-layer="secondary">
+            <p className={styles.bio}>{content.bio}</p>
+          </div>
+        </div>
+
+        <figure className={styles.portraitFigure} data-motion-layer="media">
+          <div className={styles.portraitWrap}>
+            <Image
+              src="/images/about-portrait.jpg"
+              alt={content.affiliation.name}
+              fill
+              sizes="(max-width: 860px) 100vw, 40vw"
+              className={styles.portrait}
+              unoptimized
+            />
+
+            <div className={styles.portraitTone} aria-hidden="true" />
+          </div>
+
+          <figcaption className={styles.portraitCaption}>
+            <span>{content.affiliation.name}</span>
+            <span>{content.affiliation.sub}</span>
+          </figcaption>
+        </figure>
+
+        <div className={styles.credentials} data-motion-layer="secondary">
+          <div className={styles.credential}>
+            <span className={styles.credentialLabel}>
+              {content.affiliation.label}
+            </span>
+
+            <div className={styles.credentialContent}>
+              <span className={styles.credentialValue}>
+                {content.affiliation.name}
+              </span>
+
+              <span className={styles.credentialSub}>
+                {content.affiliation.sub}
+              </span>
+            </div>
+          </div>
+
+          <div className={styles.credential}>
+            <span className={styles.credentialLabel}>
+              {content.academic.label}
+            </span>
+
+            <div className={styles.credentialContent}>
+              {content.academic.degrees.map((degree) => (
+                <span key={degree} className={styles.credentialValue}>
+                  {degree}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.credential}>
+            <span className={styles.credentialLabel}>
+              {content.languagesLabel}
+            </span>
+
+            <div className={styles.credentialContent}>
+              <span className={styles.credentialValue}>
+                {content.languagesValue}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;

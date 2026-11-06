@@ -1,0 +1,115 @@
+.section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--scene-background);
+  scroll-margin-top: var(--header-height);
+}
+
+.section::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  content: "";
+  background: linear-gradient(180deg, rgba(var(--ink-rgb), 0.08), transparent 42%);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  padding: var(--space-3xl) 0 var(--space-lg);
+}
+
+.labelRow {
+  margin-bottom: var(--space-md);
+}
+
+.title {
+  margin: 0 0 var(--space-md);
+  font-family: var(--font-cormorant), serif;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+}
+
+.title em {
+  color: var(--color-text);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.text {
+  max-width: none;
+  margin-bottom: var(--space-lg);
+  font-family: var(--font-archivo), sans-serif;
+  font-size: var(--font-size-body-sm);
+  line-height: 1.52;
+  color: rgba(var(--text-rgb), 0.86);
+}
+
+.rows {
+  margin-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(var(--gold-rgb), 0.26);
+}
+
+.row {
+  padding: var(--space-md) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  border-bottom: 1px solid rgba(var(--gold-rgb), 0.2);
+}
+
+.rowLabel {
+  font-family: var(--font-archivo), sans-serif;
+  font-size: 9px;
+  line-height: var(--line-height-compact);
+  letter-spacing: 0.16em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+}
+
+.rowLink {
+  font-family: var(--font-archivo), sans-serif;
+  font-size: var(--font-size-body-sm);
+  line-height: 1.42;
+  color: rgba(var(--text-rgb), 0.96);
+}
+
+.rowLink {
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.rowLink:hover {
+  color: var(--color-gold);
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
+  width: calc(100% - 40px);
+  min-height: 56px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  border-top: 1px solid rgba(var(--gold-rgb), 0.16);
+}
+
+.footerCopy,
+.footerCredit {
+  font-family: var(--font-archivo), sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: rgba(var(--text-rgb), 0.48);
+}

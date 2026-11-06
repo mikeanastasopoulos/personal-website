@@ -1,0 +1,95 @@
+.portraits,
+.slide {
+  position: absolute;
+  inset: 0;
+}
+
+.slide {
+  opacity: 0;
+  transition: opacity 1100ms ease-in-out;
+}
+
+.slide[data-active="true"] {
+  opacity: 1;
+}
+
+.photo {
+  object-fit: cover;
+  object-position: center 24%;
+  filter: brightness(1.1) contrast(1) saturate(1);
+}
+
+.slide[data-photo="secondary"] {
+  left: 10%;
+  mask-image: linear-gradient(90deg, transparent, var(--color-black) 12%);
+}
+
+.slide[data-photo="secondary"] .photo {
+  object-position: center 38%;
+}
+
+.controls {
+  position: absolute;
+  left: 50%;
+  bottom: var(--space-lg);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  transform: translateX(-50%);
+}
+
+.selector {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.selector span {
+  width: 7px;
+  height: 7px;
+  border-radius: var(--radius-pill);
+  background: currentColor;
+  opacity: 0.4;
+  transition: opacity var(--transition-fast);
+}
+
+.selector[aria-pressed="true"] span,
+.selector:hover span {
+  opacity: 1;
+}
+
+.selector:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: -4px;
+}
+
+.selector:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media (max-width: 860px) {
+  .photo {
+    object-position: center top;
+    filter: brightness(1.02) contrast(1.02) saturate(0.96);
+  }
+
+  .controls {
+    bottom: calc(12svh + var(--space-md));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide,
+  .selector span {
+    transition: none;
+  }
+}

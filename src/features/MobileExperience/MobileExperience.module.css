@@ -1,0 +1,16 @@
+.experience {
+  display: none;
+}
+
+.stack {
+  display: block;
+}
+
+@media (max-width: 860px) {
+  .experience {
+    display: block;
+    width: 100%;
+    min-height: 100svh;
+    background: var(--scene-background);
+  }
+}

@@ -1,0 +1,51 @@
+@import '../src/appTheme/theme.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+html {
+  scrollbar-width: none;
+  min-height: 100svh;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  min-height: 100svh;
+  overflow-x: hidden;
+  background: var(--scene-background);
+  background-attachment: fixed;
+  color: var(--color-text);
+  font-family: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif;
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
