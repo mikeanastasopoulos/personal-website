@@ -101,7 +101,7 @@ const EditorialExperience = ({
   const pendingSnapshotRef = useRef<{ index: number; element: HTMLElement } | null>(null);
 
   // eslint-disable-next-line no-restricted-syntax -- mirrors state onto a ref so gesture/navigation callbacks can read the latest value without retriggering
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     currentRef.current = current;
   }, [current]);
 
@@ -121,14 +121,20 @@ const EditorialExperience = ({
   // leaving, attach it to the previous slot so the crossfade effect below can
   // animate it out alongside the new current content fading in.
   // eslint-disable-next-line no-restricted-syntax -- syncs local slot state to the router's pathname (third-party sync)
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const nextIndex = getSceneIndex(pathname, locale);
-    isNavigatingRef.current = false;
 
     const pending = pendingSnapshotRef.current;
     pendingSnapshotRef.current = null;
 
     if (nextIndex === currentRef.current.index || !pending) {
+      if (nextIndex !== currentRef.current.index) {
+        previousSlotRef.current?.replaceChildren();
+        setOutgoingActive(false);
+        isNavigatingRef.current = false;
+      } else if (!previousSlotRef.current?.hasChildNodes()) {
+        isNavigatingRef.current = false;
+      }
       setCurrent({ index: nextIndex, node: children });
       return;
     }
@@ -150,6 +156,7 @@ const EditorialExperience = ({
 
     const clearOutgoing = () => {
       previousSlotRef.current?.replaceChildren();
+      isNavigatingRef.current = false;
       setOutgoingActive(false);
     };
 
@@ -339,7 +346,7 @@ const EditorialExperience = ({
     onNavigate: navigate,
     onNavigateTo: navigateTo,
     sceneCount,
-    disabled: outgoingActive,
+    navigationLockedRef: isNavigatingRef,
   });
 
   const activeIndex = current.index;
@@ -350,7 +357,7 @@ const EditorialExperience = ({
 
   return (
     <div ref={rootRef} className={styles.experience}>
-      <main className={styles.sceneStage}>
+      <main className={styles.sceneStage} aria-busy={outgoingActive}>
         {/* Always mounted so beginTransition/route-change can imperatively attach
             a DOM snapshot of the outgoing page before the crossfade effect runs. */}
         <div ref={previousSlotRef} className={styles.sceneSlot} />

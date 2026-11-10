@@ -130,20 +130,24 @@ const en: SiteDictionary = {
         alt: "Taking part in a YEPP congress"
       },
       {
-        caption: "Dialogue & cooperation",
-        alt: "Discussion with members of European delegations"
+        caption: "YEPP congress",
+        alt: "Attending a congress with the Greek delegation"
       },
       {
         caption: "Institutional dialogue",
         alt: "Speaking at a microphone during an institutional meeting"
       },
       {
-        caption: "Speaking at a congress",
-        alt: "Addressing a congress with a handheld microphone"
-      },
-      {
         caption: "European meetings",
         alt: "Discussion during a European working meeting"
+      },
+      {
+        caption: "Dialogue & cooperation",
+        alt: "Discussion with members of European delegations"
+      },
+      {
+        caption: "Speaking at a congress",
+        alt: "Addressing a congress with a handheld microphone"
       }
     ]),
   },
