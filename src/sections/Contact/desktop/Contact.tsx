@@ -1,6 +1,5 @@
-import { ArrowRight } from "lucide-react";
 import type { SiteDictionary } from "@/i18n/types";
-import Button from "@/components/ui/Button/Button";
+import ContactForm from "@/features/ContactForm/ContactForm";
 import { siteConfig } from "@/seo/siteConfig";
 import styles from "./Contact.module.css";
 
@@ -14,6 +13,9 @@ const Contact = ({ content, footerContent }: ContactProps) => {
     <section data-editorial-scene className={styles.section}>
       <div data-section-content className={styles.inner}>
         <div className={styles.left}>
+          <span className={styles.eyebrow} data-motion-layer="secondary">
+            {content.label}
+          </span>
           <h2 className={styles.title} data-motion-layer="primary">
             {content.title}
           </h2>
@@ -26,26 +28,24 @@ const Contact = ({ content, footerContent }: ContactProps) => {
             {content.invitation}
           </p>
 
-          <div data-motion-layer="secondary">
-            <Button variant="primary" href={`mailto:${siteConfig.email}`}>
-              {content.cta} <ArrowRight size={14} />
-            </Button>
+          <div className={styles.details} data-motion-layer="secondary">
+            <div className={styles.row}>
+              <div className={styles.rowLabel}>{content.emailLabel}</div>
+              <a href={`mailto:${siteConfig.email}`} className={styles.rowLink}>
+                {siteConfig.email}
+              </a>
+            </div>
+            <div className={styles.row}>
+              <div className={styles.rowLabel}>{content.phoneLabel}</div>
+              <a href={`tel:${siteConfig.phone}`} className={styles.rowLink}>
+                {siteConfig.phoneDisplay}
+              </a>
+            </div>
           </div>
         </div>
 
         <div className={styles.right} data-motion-layer="secondary">
-          <div className={styles.row}>
-            <div className={styles.rowLabel}>{content.emailLabel}</div>
-            <a href={`mailto:${siteConfig.email}`} className={styles.rowLink}>
-              {siteConfig.email}
-            </a>
-          </div>
-          <div className={styles.row}>
-            <div className={styles.rowLabel}>{content.phoneLabel}</div>
-            <a href={`tel:${siteConfig.phone}`} className={styles.rowLink}>
-              {siteConfig.phoneDisplay}
-            </a>
-          </div>
+          <ContactForm content={content.form} />
         </div>
       </div>
 

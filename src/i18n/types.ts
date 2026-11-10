@@ -83,6 +83,10 @@ export type SiteDictionary = {
     photos: EuropeanPhoto[];
   };
   contact: {
+    form: {
+      label: string; required: string; firstName: string; lastName: string; phone: string; email: string;
+      message: string; submit: string; sending: string; success: string; error: string;
+    };
     label: string;
     title: string;
     text: string;

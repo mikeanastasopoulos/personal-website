@@ -152,6 +152,19 @@ const en: SiteDictionary = {
     ]),
   },
   contact: {
+    form: {
+      "label": "Contact form",
+      "required": "All fields are required.",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "phone": "Phone number",
+      "email": "Email",
+      "message": "Your message",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "success": "Your message has been sent. Thank you for getting in touch.",
+      "error": "Your message could not be sent. Please try again or contact us by email or phone."
+},
     label: "CONTACT",
     title: "Every case is different.",
     text: "A careful assessment of the facts and timely legal advice can be decisive.",

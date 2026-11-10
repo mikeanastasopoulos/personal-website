@@ -49,3 +49,13 @@
   .slot:hover { box-shadow: none; }
   .slot:hover .image { transform: none; }
 }
+
+/* Keep the subject centered in the requested collage crops. */
+.slot[data-photo-id="european-5"] .image {
+  scale: 1.1;
+}
+
+.slot[data-photo-id="european-6"] .image {
+  scale: 1.22;
+  translate: 8% 0;
+}

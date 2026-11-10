@@ -26,7 +26,7 @@ const About = ({ content }: AboutProps) => {
               src="/images/about-portrait.jpg"
               alt={content.affiliation.name}
               fill
-              sizes="(max-width: 860px) 100vw, 40vw"
+              sizes="(max-width: 860px) 100vw, 65vw"
               className={styles.portrait}
               unoptimized
             />
@@ -39,50 +39,6 @@ const About = ({ content }: AboutProps) => {
             <span>{content.affiliation.sub}</span>
           </figcaption>
         </figure>
-
-        <div className={styles.credentials} data-motion-layer="secondary">
-          <div className={styles.credential}>
-            <span className={styles.credentialLabel}>
-              {content.affiliation.label}
-            </span>
-
-            <div className={styles.credentialContent}>
-              <span className={styles.credentialValue}>
-                {content.affiliation.name}
-              </span>
-
-              <span className={styles.credentialSub}>
-                {content.affiliation.sub}
-              </span>
-            </div>
-          </div>
-
-          <div className={styles.credential}>
-            <span className={styles.credentialLabel}>
-              {content.academic.label}
-            </span>
-
-            <div className={styles.credentialContent}>
-              {content.academic.degrees.map((degree) => (
-                <span key={degree} className={styles.credentialValue}>
-                  {degree}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className={styles.credential}>
-            <span className={styles.credentialLabel}>
-              {content.languagesLabel}
-            </span>
-
-            <div className={styles.credentialContent}>
-              <span className={styles.credentialValue}>
-                {content.languagesValue}
-              </span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

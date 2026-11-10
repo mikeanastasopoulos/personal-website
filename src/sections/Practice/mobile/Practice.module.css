@@ -54,9 +54,10 @@
 
 .title {
   margin: 0;
+  padding: 0.12em 0.08em;
   font-family: var(--font-cormorant), serif;
   font-size: 22px;
-  line-height: var(--line-height-heading);
+  line-height: 1.2;
   letter-spacing: -0.01em;
   font-weight: 400;
   color: #2c2015;
@@ -97,8 +98,8 @@
   }
 
   @keyframes practiceTypewriter {
-    from { clip-path: inset(0 100% 0 0); }
-    to { clip-path: inset(0 0 0 0); }
+    from { clip-path: inset(-0.15em 100% -0.15em -0.1em); }
+    to { clip-path: inset(-0.15em -0.1em -0.15em -0.1em); }
   }
 
   @keyframes practiceDividerReveal {
