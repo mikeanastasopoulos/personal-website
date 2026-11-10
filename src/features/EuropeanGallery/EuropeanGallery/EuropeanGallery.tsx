@@ -37,7 +37,7 @@ const EuropeanGallery = ({
   }, []);
   const viewer = useGalleryViewer(photos.length);
   // Display order follows the requested collage placement; lightbox indices stay tied to each photo.
-  const collageOrder = [1, 0, 3, 5, 2, 4];
+  const collageOrder = [0, 4, 2, 1, 3];
 
   return (
     <div ref={albumRef} className={styles.album} role="group" aria-label={label}>
@@ -46,7 +46,7 @@ const EuropeanGallery = ({
           <GallerySlot
             key={photos[photoIndex]!.id}
             photo={photos[photoIndex]!}
-            sizes={(slotIndex === 0 || slotIndex === 5) ? HERO_MOSAIC_IMAGE_SIZES : undefined}
+            sizes={(slotIndex === 0 || slotIndex === 1 || slotIndex === 4) ? HERO_MOSAIC_IMAGE_SIZES : undefined}
             enlargeLabel={enlargeLabel}
             onOpen={(button) => { setPreload(true); viewer.openViewer(photoIndex, button); }}
           />

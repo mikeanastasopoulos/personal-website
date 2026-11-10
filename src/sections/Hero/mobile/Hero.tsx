@@ -1,4 +1,3 @@
-import Button from "@/components/ui/Button/Button";
 import HeroPortraits from "@/features/HeroPortraits/HeroPortraits/HeroPortraits";
 import type { Locale } from "@/i18n/locales";
 import type { SiteDictionary } from "@/i18n/types";
@@ -36,8 +35,12 @@ const Hero = ({ content, locale }: HeroProps) => {
 
         <p className={styles.description}>{content.description}</p>
 
-        <div className={styles.actions}>
-          <Button href="#contact">{content.cta}</Button>
+        <div className={styles.credentials}>
+          {content.chips.map((chip) => (
+            <span key={chip} className={styles.credential}>
+              <span>{chip}</span>
+            </span>
+          ))}
         </div>
       </div>
     </section>

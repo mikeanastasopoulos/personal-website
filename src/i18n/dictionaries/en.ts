@@ -17,7 +17,11 @@ const en: SiteDictionary = {
     portraitsLabel: "Portrait photographs",
     selectPortrait: "Show portrait",
 
-    cta: "Get in touch",
+    chips: [
+      "CRIMINAL LAW",
+      "ATHENS · KOLONAKI",
+      "LL.M. INTERNATIONAL AND EUROPEAN LEGAL STUDIES"
+    ],
     label: "LAWYER · ATHENS",
     name1: "Michael D.",
     name2: "Anastasopoulos",
@@ -121,10 +125,6 @@ const en: SiteDictionary = {
     enlargePhoto: "View full image",
     closeGallery: "Close viewer",
     photos: getEuropeanPhotos([
-      {
-        caption: "YEPP congress",
-        alt: "Attending a congress with the Greek delegation"
-      },
       {
         caption: "Representing ONNED",
         alt: "Taking part in a YEPP congress"

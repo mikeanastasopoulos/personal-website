@@ -37,7 +37,7 @@ export type SiteDictionary = {
     closeMenuLabel: string;
   };
   hero: {
-    cta: string;
+    chips: [string, string, string];
     label: string;
     portraitsLabel: string;
     selectPortrait: string;

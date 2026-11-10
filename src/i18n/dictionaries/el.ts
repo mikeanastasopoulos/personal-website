@@ -17,7 +17,11 @@ const el: SiteDictionary = {
     portraitsLabel: "Φωτογραφίες πορτρέτου",
     selectPortrait: "Προβολή πορτρέτου",
 
-    cta: "Επικοινωνήστε μαζί μου",
+    chips: [
+      "ΠΟΙΝΙΚΟ ΔΙΚΑΙΟ",
+      "ΑΘΗΝΑ · ΚΟΛΩΝΑΚΙ",
+      "LL.M. IN INTERNATIONAL AND EUROPEAN LEGAL STUDIES"
+    ],
     label: "ΔΙΚΗΓΟΡΟΣ · ΑΘΗΝΑ",
     name1: "Μιχαήλ Δ.",
     name2: "Αναστασόπουλος",
@@ -121,10 +125,6 @@ const el: SiteDictionary = {
     enlargePhoto: "Προβολή σε πλήρες μέγεθος",
     closeGallery: "Κλείσιμο προβολής",
     photos: getEuropeanPhotos([
-      {
-        caption: "Συνέδριο YEPP",
-        alt: "Συμμετοχή σε συνέδριο με την ελληνική αντιπροσωπεία"
-      },
       {
         caption: "Εκπροσώπηση της ΟΝΝΕΔ",
         alt: "Συμμετοχή στις εργασίες συνεδρίου της YEPP"
