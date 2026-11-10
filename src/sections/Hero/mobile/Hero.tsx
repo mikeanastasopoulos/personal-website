@@ -15,6 +15,7 @@ const Hero = ({ content, locale }: HeroProps) => {
     <section id="hero" className={styles.hero}>
       <div className={styles.imageStage}>
         <HeroPortraits
+          swipeEnabled
           alt={`${content.name1} ${content.name2}`}
           label={content.portraitsLabel}
           selectLabel={content.selectPortrait}

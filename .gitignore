@@ -1,2 +1,6 @@
 node_modules
 .env
+
+# Next.js generated build output
+/.next/
+/.next-dev/

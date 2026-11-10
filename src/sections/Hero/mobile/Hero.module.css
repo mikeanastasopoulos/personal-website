@@ -10,7 +10,7 @@
 .imageStage {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 2 / 3;
   overflow: hidden;
 }
 
@@ -22,8 +22,8 @@
     180deg,
     rgba(var(--navy-rgb), 0.14) 0%,
     rgba(var(--navy-rgb), 0.04) 25%,
-    rgba(var(--navy-rgb), 0.32) 50%,
-    rgba(var(--navy-rgb), 0.86) 76%,
+    rgba(var(--navy-rgb), 0.08) 55%,
+    rgba(var(--navy-rgb), 0.5) 84%,
     var(--color-bg-deep-1) 100%
   );
   pointer-events: none;
@@ -32,12 +32,11 @@
 .copyPanel {
   container-type: inline-size;
   position: relative;
-  margin-top: -12svh;
-  padding: 0 var(--space-lg) var(--space-3xl);
+  padding: 24px clamp(20px, 5vw, 32px) 56px;
 }
 
 .eyebrow {
-  margin-bottom: var(--space-md);
+  margin-bottom: 24px;
   font-family: var(--font-archivo), sans-serif;
   font-size: var(--font-size-label-lg);
   line-height: var(--line-height-compact);
@@ -49,7 +48,7 @@
 .name {
   font-family: var(--font-cormorant), serif;
   font-size: min(38px, 9.6cqw);
-  line-height: 0.98;
+  line-height: 1.08;
   letter-spacing: 0.002em;
   color: var(--color-text);
   text-transform: uppercase;
@@ -74,7 +73,7 @@
   display: block;
   width: 54px;
   height: 2px;
-  margin: var(--space-lg) 0 var(--space-md);
+  margin: 28px 0 24px;
   background: var(--color-gold-light);
 }
 
@@ -88,10 +87,10 @@
 }
 
 .credentials {
-  margin-top: var(--space-lg);
+  margin-top: 28px;
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-sm) var(--space-lg);
+  gap: 16px 20px;
 }
 
 .credential {

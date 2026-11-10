@@ -95,7 +95,7 @@
 
   .controls {
     left: 50%;
-    bottom: calc(12svh + var(--space-md));
+    bottom: 8px;
   }
 }
 
