@@ -3,6 +3,7 @@
 import { useRef, useState, type FormEvent } from "react";
 import type { SiteDictionary } from "@/i18n/types";
 import { CONTACT_FORM_CONFIG } from "./config";
+import Button from "@/components/ui/Button/Button";
 import styles from "./ContactForm.module.css";
 
 type Props = { content: SiteDictionary["contact"]["form"] };
@@ -80,9 +81,9 @@ const ContactForm = ({ content }: Props) => {
         </label>
       </div>
       <input className={styles.honeypot} type="checkbox" name="botcheck" tabIndex={-1} aria-hidden="true" />
-      <button type="submit" disabled={status === "sending"}>
+      <Button type="submit" className={styles.submitButton} disabled={status === "sending"}>
         {status === "sending" ? content.sending : content.submit}
-      </button>
+      </Button>
       <p className={styles.status} role="status" aria-live="polite">
         {statusMessage}
       </p>

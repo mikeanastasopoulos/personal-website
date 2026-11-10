@@ -1,0 +1,44 @@
+.credit {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 6px;
+  min-height: 44px;
+  padding: 6px 0;
+  font-family: var(--font-archivo), sans-serif;
+  text-decoration: none;
+}
+
+.label {
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(var(--text-rgb), 0.65);
+}
+
+.name {
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-gold-light);
+  text-underline-offset: 5px;
+}
+
+.credit:hover .name {
+  text-decoration: underline;
+}
+
+.credit:focus-visible {
+  outline: 2px solid var(--color-gold-light);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 860px) {
+  .credit {
+    align-items: flex-start;
+  }
+}

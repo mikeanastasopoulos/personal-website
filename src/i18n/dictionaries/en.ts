@@ -17,11 +17,7 @@ const en: SiteDictionary = {
     portraitsLabel: "Portrait photographs",
     selectPortrait: "Show portrait",
 
-    chips: [
-      "CRIMINAL LAW",
-      "ATHENS · KOLONAKI",
-      "LL.M. INTERNATIONAL AND EUROPEAN LEGAL STUDIES"
-    ],
+    cta: "Get in touch",
     label: "LAWYER · ATHENS",
     name1: "Michael D.",
     name2: "Anastasopoulos",
@@ -175,7 +171,7 @@ const en: SiteDictionary = {
   },
   footer: {
     copy: 'Michael D. Anastasopoulos',
-    developedBy: 'Developed by GroundWork Studio',
+    developedBy: 'Design & development',
   },
 };
 

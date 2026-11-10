@@ -17,11 +17,7 @@ const el: SiteDictionary = {
     portraitsLabel: "Φωτογραφίες πορτρέτου",
     selectPortrait: "Προβολή πορτρέτου",
 
-    chips: [
-      "ΠΟΙΝΙΚΟ ΔΙΚΑΙΟ",
-      "ΑΘΗΝΑ · ΚΟΛΩΝΑΚΙ",
-      "LL.M. IN INTERNATIONAL AND EUROPEAN LEGAL STUDIES"
-    ],
+    cta: "Επικοινωνήστε μαζί μου",
     label: "ΔΙΚΗΓΟΡΟΣ · ΑΘΗΝΑ",
     name1: "Μιχαήλ Δ.",
     name2: "Αναστασόπουλος",
@@ -175,7 +171,7 @@ const el: SiteDictionary = {
   },
   footer: {
     copy: 'Μιχαήλ Δ. Αναστασόπουλος',
-    developedBy: 'Ανάπτυξη από GroundWork Studio',
+    developedBy: 'Σχεδιασμός & ανάπτυξη',
   },
 };
 

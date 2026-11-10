@@ -1,3 +1,5 @@
+import { buildScenePath } from "@/features/EditorialExperience/routeOrder";
+import Button from "@/components/ui/Button/Button";
 import HeroPortraits from "@/features/HeroPortraits/HeroPortraits/HeroPortraits";
 import type { Locale } from "@/i18n/locales";
 import type { SiteDictionary } from "@/i18n/types";
@@ -47,12 +49,10 @@ const Hero = ({ content, locale }: HeroProps) => {
             {content.description}
           </p>
 
-          <div className={styles.credentials} data-motion-layer="secondary">
-            {content.chips.map((chip) => (
-              <span key={chip} className={styles.credential}>
-                <span>{chip}</span>
-              </span>
-            ))}
+          <div className={styles.actions} data-motion-layer="secondary">
+            <Button href={buildScenePath(locale, "contact")} data-scene-target="contact">
+              {content.cta}
+            </Button>
           </div>
         </div>
       </div>

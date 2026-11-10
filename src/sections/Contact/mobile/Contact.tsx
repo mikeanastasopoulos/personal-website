@@ -1,3 +1,4 @@
+import StudioCredit from "@/components/layout/StudioCredit/StudioCredit";
 import type { SiteDictionary } from "@/i18n/types";
 import ContactForm from "@/features/ContactForm/ContactForm";
 import { siteConfig } from "@/seo/siteConfig";
@@ -44,7 +45,7 @@ const Contact = ({ content, footerContent }: ContactProps) => {
         <span className={styles.footerCopy}>
           © {new Date().getFullYear()} {footerContent.copy}
         </span>
-        <span className={styles.footerCredit}>{footerContent.developedBy}</span>
+        <StudioCredit label={footerContent.developedBy} />
       </footer>
     </section>
   );

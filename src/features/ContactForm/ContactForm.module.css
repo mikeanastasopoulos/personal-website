@@ -48,19 +48,11 @@
 }
 .fields textarea::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
 .fields input:focus-visible,
-.fields textarea:focus-visible,
-.form button:focus-visible { outline: 2px solid var(--color-gold-light); outline-offset: 3px; }
-.form button {
+.fields textarea:focus-visible { outline: 2px solid var(--color-gold-light); outline-offset: 3px; }
+.submitButton {
   margin-top: 28px;
-  padding: 13px 24px;
-  border: 1px solid var(--color-gold);
-  background: var(--color-gold);
-  color: var(--color-bg-deep-1);
-  font: inherit;
-  font-size: 13px;
-  cursor: pointer;
 }
-.form button:disabled { opacity: 0.65; cursor: wait; }
+.submitButton:disabled { opacity: 0.65; cursor: wait; }
 .honeypot { display: none; }
 .status { min-height: 2.8em; margin: 12px 0 0; font-size: 13px; line-height: 1.4; }
 @media (max-width: 480px) {

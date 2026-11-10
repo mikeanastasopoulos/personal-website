@@ -86,34 +86,6 @@
   color: rgba(var(--text-rgb), 0.96);
 }
 
-.credentials {
+.actions {
   margin-top: 28px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px 20px;
-}
-
-.credential {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-family: var(--font-archivo), sans-serif;
-  font-size: var(--font-size-label-sm);
-  line-height: var(--line-height-compact);
-  letter-spacing: 0.14em;
-  color: rgba(var(--text-rgb), 0.82);
-  text-transform: uppercase;
-}
-
-.credential:last-child {
-  flex-basis: 100%;
-}
-
-.credential::before {
-  width: 18px;
-  height: 1px;
-  display: block;
-  flex-shrink: 0;
-  content: "";
-  background: rgba(var(--gold-rgb), 0.64);
 }
