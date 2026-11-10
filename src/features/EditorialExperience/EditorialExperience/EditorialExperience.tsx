@@ -363,7 +363,7 @@ const EditorialExperience = ({
         <div ref={previousSlotRef} className={styles.sceneSlot} />
 
 
-        <div key={current.index} ref={currentSlotRef} className={styles.sceneSlot}>
+        <div ref={currentSlotRef} className={styles.sceneSlot}>
           {current.node}
         </div>
       </main>

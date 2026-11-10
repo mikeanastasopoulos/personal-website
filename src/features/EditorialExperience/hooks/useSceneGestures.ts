@@ -41,7 +41,8 @@ export const useSceneGestures = (options: UseSceneGesturesOptions): void => {
     const root = rootRef.current;
     if (!root) return;
 
-    const isDesktopVisible = () => root.getClientRects().length > 0;
+    const mobileViewport = window.matchMedia("(max-width: 860px)");
+    const isDesktopVisible = () => !mobileViewport.matches;
     const isLocked = () => latest.current.navigationLockedRef.current;
     const navigateOrStep = (direction: Direction) => {
       if (isLocked()) return;
