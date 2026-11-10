@@ -28,6 +28,7 @@ const European = ({ content }: EuropeanProps) => {
 
         <div className={styles.gallery} data-motion-layer="media">
           <EuropeanGallery
+            desktopOrder
             photos={content.photos}
             label={content.galleryLabel}
             previousLabel={content.previousPhoto}

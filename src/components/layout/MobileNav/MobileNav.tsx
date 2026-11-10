@@ -39,7 +39,7 @@ const MobileNav = ({
         aria-label={isOpen ? closeMenuLabel : openMenuLabel}
         aria-expanded={isOpen}
       >
-        {isOpen ? <X size={18} /> : <Menu size={18} />}
+        {isOpen ? <X size={16} /> : <Menu size={16} />}
       </button>
 
       {isOpen && (

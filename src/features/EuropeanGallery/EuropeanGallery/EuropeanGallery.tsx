@@ -15,10 +15,11 @@ type EuropeanGalleryProps = {
   nextLabel: string;
   enlargeLabel: string;
   closeLabel: string;
+  desktopOrder?: boolean;
 };
 
 const EuropeanGallery = ({
-  photos, label, previousLabel, nextLabel, enlargeLabel, closeLabel,
+  photos, label, previousLabel, nextLabel, enlargeLabel, closeLabel, desktopOrder = false,
 }: EuropeanGalleryProps) => {
   const albumRef = useRef<HTMLDivElement>(null);
   const [preload, setPreload] = useState(false);
@@ -35,12 +36,19 @@ const EuropeanGallery = ({
     observer.observe(album);
     return () => observer.disconnect();
   }, []);
-  const viewer = useGalleryViewer(photos.length);
+  // Keep the lightbox and keyboard sequence aligned with each layout's order.
+  const galleryPhotos = desktopOrder
+    ? [0, 5, 2, 3, 4, 1].flatMap((index) => {
+        const photo = photos[index];
+        return photo ? [photo] : [];
+      })
+    : photos;
+  const viewer = useGalleryViewer(galleryPhotos.length);
 
   return (
     <div ref={albumRef} className={styles.album} role="group" aria-label={label}>
       <div className={styles.collage}>
-        {photos.map((photo, photoIndex) => (
+        {galleryPhotos.map((photo, photoIndex) => (
           <GallerySlot
             key={photo.id}
             photo={photo}
@@ -53,7 +61,7 @@ const EuropeanGallery = ({
       <GalleryLightbox
         preload={preload}
         dialogRef={viewer.dialogRef}
-        photos={photos}
+        photos={galleryPhotos}
         selectedIndex={viewer.selectedIndex}
         label={label}
         previousLabel={previousLabel}

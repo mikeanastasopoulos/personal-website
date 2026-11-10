@@ -1,7 +1,7 @@
 "use client";
 
 import type { SiteDictionary } from "@/i18n/types";
-import { usePracticeSequence } from "../hooks/usePracticeSequence";
+import { usePracticeCardReveal } from "../hooks/usePracticeCardReveal";
 import styles from "./Practice.module.css";
 
 type PracticeProps = {
@@ -9,18 +9,24 @@ type PracticeProps = {
 };
 
 const Practice = ({ content }: PracticeProps) => {
-  const { sectionRef, isSequenceActive } = usePracticeSequence();
+  const { sectionRef, revealReady, revealedCards } = usePracticeCardReveal();
 
   return (
     <section
       ref={sectionRef}
       id="practice"
-      className={`${styles.section} ${isSequenceActive ? styles.sequenceActive : ""}`}
+      className={styles.section}
+      data-reveal-ready={revealReady}
     >
       <div className={styles.inner}>
         <div className={styles.grid}>
           {content.items.map((item) => (
-            <article key={item.number} className={styles.card}>
+            <article
+              key={item.number}
+              className={styles.card}
+              data-practice-card={item.number}
+              data-revealed={revealedCards.has(item.number)}
+            >
               <div className={styles.cardContent}>
                 <h2 className={styles.title}>{item.title}</h2>
 

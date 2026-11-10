@@ -30,6 +30,7 @@
   --shadow-rgb: 0, 0, 0;
 
   --header-height: 72px;
+  --header-control-height: 34px;
   --site-max-width: 1920px;
   --site-gutter: max(0px, calc((100vw - var(--site-max-width)) / 2));
   --content-max-width: 1300px;

@@ -1,4 +1,5 @@
 .wrap {
+  height: var(--header-control-height);
   display: flex;
   align-items: center;
   gap: 2px;
