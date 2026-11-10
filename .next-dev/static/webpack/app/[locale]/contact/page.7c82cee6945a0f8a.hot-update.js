@@ -1,0 +1,21 @@
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+self["webpackHotUpdate_N_E"]("app/[locale]/contact/page",{
+
+/***/ "(app-pages-browser)/./src/sections/Contact/desktop/Contact.module.css":
+/*!*********************************************************!*\
+  !*** ./src/sections/Contact/desktop/Contact.module.css ***!
+  \*********************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+eval(__webpack_require__.ts("// extracted by mini-css-extract-plugin\nmodule.exports = {\"section\":\"Contact_section___C5Al\",\"inner\":\"Contact_inner__XcQBV\",\"left\":\"Contact_left__IhRLi\",\"right\":\"Contact_right__UR3JU\",\"eyebrow\":\"Contact_eyebrow__4nyjE\",\"details\":\"Contact_details__AKSsB\",\"labelRow\":\"Contact_labelRow__yBNT3\",\"title\":\"Contact_title__t1I67\",\"text\":\"Contact_text__jXyaA\",\"row\":\"Contact_row__eTXlf\",\"rowLabel\":\"Contact_rowLabel__6KYZg\",\"rowLink\":\"Contact_rowLink__MzQAn\",\"footer\":\"Contact_footer__VO1m0\",\"footerCopy\":\"Contact_footerCopy__Xtmpn\",\"footerCredit\":\"Contact_footerCredit__qjEcP\"};\n    if(true) {\n      // 1794302789626\n      var cssReload = __webpack_require__(/*! ./node_modules/next/dist/compiled/mini-css-extract-plugin/hmr/hotModuleReplacement.js */ \"(app-pages-browser)/./node_modules/next/dist/compiled/mini-css-extract-plugin/hmr/hotModuleReplacement.js\")(module.id, {\"publicPath\":\"/_next/\",\"esModule\":false,\"locals\":true});\n      module.hot.dispose(cssReload);\n      \n    }\n  \nmodule.exports.__checksum = \"9b7a1d17780c\"\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwcC1wYWdlcy1icm93c2VyKS8uL3NyYy9zZWN0aW9ucy9Db250YWN0L2Rlc2t0b3AvQ29udGFjdC5tb2R1bGUuY3NzIiwibWFwcGluZ3MiOiJBQUFBO0FBQ0Esa0JBQWtCO0FBQ2xCLE9BQU8sSUFBVTtBQUNqQjtBQUNBLHNCQUFzQixtQkFBTyxDQUFDLHdNQUF5SixjQUFjLHNEQUFzRDtBQUMzUCxNQUFNLFVBQVU7QUFDaEI7QUFDQTtBQUNBO0FBQ0EseUJBQXlCIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vX05fRS8uL3NyYy9zZWN0aW9ucy9Db250YWN0L2Rlc2t0b3AvQ29udGFjdC5tb2R1bGUuY3NzP2YwOTAiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5tb2R1bGUuZXhwb3J0cyA9IHtcInNlY3Rpb25cIjpcIkNvbnRhY3Rfc2VjdGlvbl9fX0M1QWxcIixcImlubmVyXCI6XCJDb250YWN0X2lubmVyX19YY1FCVlwiLFwibGVmdFwiOlwiQ29udGFjdF9sZWZ0X19JaFJMaVwiLFwicmlnaHRcIjpcIkNvbnRhY3RfcmlnaHRfX1VSM0pVXCIsXCJleWVicm93XCI6XCJDb250YWN0X2V5ZWJyb3dfXzRueWpFXCIsXCJkZXRhaWxzXCI6XCJDb250YWN0X2RldGFpbHNfX0FLU3NCXCIsXCJsYWJlbFJvd1wiOlwiQ29udGFjdF9sYWJlbFJvd19feUJOVDNcIixcInRpdGxlXCI6XCJDb250YWN0X3RpdGxlX190MUk2N1wiLFwidGV4dFwiOlwiQ29udGFjdF90ZXh0X19qWHlhQVwiLFwicm93XCI6XCJDb250YWN0X3Jvd19fZVRYbGZcIixcInJvd0xhYmVsXCI6XCJDb250YWN0X3Jvd0xhYmVsX182S1laZ1wiLFwicm93TGlua1wiOlwiQ29udGFjdF9yb3dMaW5rX19NelFBblwiLFwiZm9vdGVyXCI6XCJDb250YWN0X2Zvb3Rlcl9fVk8xbTBcIixcImZvb3RlckNvcHlcIjpcIkNvbnRhY3RfZm9vdGVyQ29weV9fWHRtcG5cIixcImZvb3RlckNyZWRpdFwiOlwiQ29udGFjdF9mb290ZXJDcmVkaXRfX3FqRWNQXCJ9O1xuICAgIGlmKG1vZHVsZS5ob3QpIHtcbiAgICAgIC8vIDE3OTQzMDI3ODk2MjZcbiAgICAgIHZhciBjc3NSZWxvYWQgPSByZXF1aXJlKFwiL1ZvbHVtZXMvV29ya0RyaXZlL1Byb2plY3RzL01peGFsaXMgQW5hc3Rhc29wb3Vsb3MvcGVyc29uYWwtd2Vic2l0ZS9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L2NvbXBpbGVkL21pbmktY3NzLWV4dHJhY3QtcGx1Z2luL2htci9ob3RNb2R1bGVSZXBsYWNlbWVudC5qc1wiKShtb2R1bGUuaWQsIHtcInB1YmxpY1BhdGhcIjpcIi9fbmV4dC9cIixcImVzTW9kdWxlXCI6ZmFsc2UsXCJsb2NhbHNcIjp0cnVlfSk7XG4gICAgICBtb2R1bGUuaG90LmRpc3Bvc2UoY3NzUmVsb2FkKTtcbiAgICAgIFxuICAgIH1cbiAgXG5tb2R1bGUuZXhwb3J0cy5fX2NoZWNrc3VtID0gXCI5YjdhMWQxNzc4MGNcIlxuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(app-pages-browser)/./src/sections/Contact/desktop/Contact.module.css\n"));
+
+/***/ })
+
+});

@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Volumes/WorkDrive/Projects/Mixalis Anastasopoulos/personal-website/app/[locale]/layout\":[\"static/media/e1bd8679f44de7fe-s.p.woff2\",\"static/media/ab5447935bed7868-s.p.woff2\",\"static/media/64d62b5b0b75d5d3-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

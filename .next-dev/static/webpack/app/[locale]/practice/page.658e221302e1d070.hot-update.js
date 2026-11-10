@@ -1,0 +1,21 @@
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+self["webpackHotUpdate_N_E"]("app/[locale]/practice/page",{
+
+/***/ "(app-pages-browser)/./src/sections/Practice/desktop/Practice.module.css":
+/*!***********************************************************!*\
+  !*** ./src/sections/Practice/desktop/Practice.module.css ***!
+  \***********************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+eval(__webpack_require__.ts("// extracted by mini-css-extract-plugin\nmodule.exports = {\"section\":\"Practice_section__eUN5U\",\"pageNumber\":\"Practice_pageNumber__nmoqc\",\"inner\":\"Practice_inner__PPKI2\",\"grid\":\"Practice_grid__H2hMl\",\"card\":\"Practice_card__TPrms\",\"cardContent\":\"Practice_cardContent__1XZEL\",\"title\":\"Practice_title__cN1MX\",\"divider\":\"Practice_divider__eO_j3\",\"text\":\"Practice_text__a3i8w\",\"sequenceActive\":\"Practice_sequenceActive__TNmw5\",\"practiceTypewriter\":\"Practice_practiceTypewriter__QYrtQ\",\"practiceDividerReveal\":\"Practice_practiceDividerReveal__CgX9f\",\"practiceDescriptionReveal\":\"Practice_practiceDescriptionReveal__elXsM\"};\n    if(true) {\n      // 1794302776033\n      var cssReload = __webpack_require__(/*! ./node_modules/next/dist/compiled/mini-css-extract-plugin/hmr/hotModuleReplacement.js */ \"(app-pages-browser)/./node_modules/next/dist/compiled/mini-css-extract-plugin/hmr/hotModuleReplacement.js\")(module.id, {\"publicPath\":\"/_next/\",\"esModule\":false,\"locals\":true});\n      module.hot.dispose(cssReload);\n      \n    }\n  \nmodule.exports.__checksum = \"c029fdb30ccc\"\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwcC1wYWdlcy1icm93c2VyKS8uL3NyYy9zZWN0aW9ucy9QcmFjdGljZS9kZXNrdG9wL1ByYWN0aWNlLm1vZHVsZS5jc3MiLCJtYXBwaW5ncyI6IkFBQUE7QUFDQSxrQkFBa0I7QUFDbEIsT0FBTyxJQUFVO0FBQ2pCO0FBQ0Esc0JBQXNCLG1CQUFPLENBQUMsd01BQXlKLGNBQWMsc0RBQXNEO0FBQzNQLE1BQU0sVUFBVTtBQUNoQjtBQUNBO0FBQ0E7QUFDQSx5QkFBeUIiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9fTl9FLy4vc3JjL3NlY3Rpb25zL1ByYWN0aWNlL2Rlc2t0b3AvUHJhY3RpY2UubW9kdWxlLmNzcz81ZDc0Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIGV4dHJhY3RlZCBieSBtaW5pLWNzcy1leHRyYWN0LXBsdWdpblxubW9kdWxlLmV4cG9ydHMgPSB7XCJzZWN0aW9uXCI6XCJQcmFjdGljZV9zZWN0aW9uX19lVU41VVwiLFwicGFnZU51bWJlclwiOlwiUHJhY3RpY2VfcGFnZU51bWJlcl9fbm1vcWNcIixcImlubmVyXCI6XCJQcmFjdGljZV9pbm5lcl9fUFBLSTJcIixcImdyaWRcIjpcIlByYWN0aWNlX2dyaWRfX0gyaE1sXCIsXCJjYXJkXCI6XCJQcmFjdGljZV9jYXJkX19UUHJtc1wiLFwiY2FyZENvbnRlbnRcIjpcIlByYWN0aWNlX2NhcmRDb250ZW50X18xWFpFTFwiLFwidGl0bGVcIjpcIlByYWN0aWNlX3RpdGxlX19jTjFNWFwiLFwiZGl2aWRlclwiOlwiUHJhY3RpY2VfZGl2aWRlcl9fZU9fajNcIixcInRleHRcIjpcIlByYWN0aWNlX3RleHRfX2EzaTh3XCIsXCJzZXF1ZW5jZUFjdGl2ZVwiOlwiUHJhY3RpY2Vfc2VxdWVuY2VBY3RpdmVfX1RObXc1XCIsXCJwcmFjdGljZVR5cGV3cml0ZXJcIjpcIlByYWN0aWNlX3ByYWN0aWNlVHlwZXdyaXRlcl9fUVlydFFcIixcInByYWN0aWNlRGl2aWRlclJldmVhbFwiOlwiUHJhY3RpY2VfcHJhY3RpY2VEaXZpZGVyUmV2ZWFsX19DZ1g5ZlwiLFwicHJhY3RpY2VEZXNjcmlwdGlvblJldmVhbFwiOlwiUHJhY3RpY2VfcHJhY3RpY2VEZXNjcmlwdGlvblJldmVhbF9fZWxYc01cIn07XG4gICAgaWYobW9kdWxlLmhvdCkge1xuICAgICAgLy8gMTc5NDMwMjc3NjAzM1xuICAgICAgdmFyIGNzc1JlbG9hZCA9IHJlcXVpcmUoXCIvVm9sdW1lcy9Xb3JrRHJpdmUvUHJvamVjdHMvTWl4YWxpcyBBbmFzdGFzb3BvdWxvcy9wZXJzb25hbC13ZWJzaXRlL25vZGVfbW9kdWxlcy9uZXh0L2Rpc3QvY29tcGlsZWQvbWluaS1jc3MtZXh0cmFjdC1wbHVnaW4vaG1yL2hvdE1vZHVsZVJlcGxhY2VtZW50LmpzXCIpKG1vZHVsZS5pZCwge1wicHVibGljUGF0aFwiOlwiL19uZXh0L1wiLFwiZXNNb2R1bGVcIjpmYWxzZSxcImxvY2Fsc1wiOnRydWV9KTtcbiAgICAgIG1vZHVsZS5ob3QuZGlzcG9zZShjc3NSZWxvYWQpO1xuICAgICAgXG4gICAgfVxuICBcbm1vZHVsZS5leHBvcnRzLl9fY2hlY2tzdW0gPSBcImMwMjlmZGIzMGNjY1wiXG4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(app-pages-browser)/./src/sections/Practice/desktop/Practice.module.css\n"));
+
+/***/ })
+
+});

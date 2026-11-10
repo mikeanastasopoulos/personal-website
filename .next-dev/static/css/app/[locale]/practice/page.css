@@ -1,0 +1,228 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/sections/Practice/desktop/Practice.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************/
+.Practice_section__eUN5U {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--scene-background);
+}
+
+.Practice_pageNumber__nmoqc {
+  position: absolute;
+  top: var(--space-3xl);
+  right: var(--space-4xl);
+  z-index: 0;
+  font-family: var(--font-cormorant), serif;
+  font-size: var(--font-size-display-xl);
+  line-height: var(--line-height-display);
+  color: rgba(var(--gold-rgb), 0.025);
+  transform: scale(2.2);
+  transform-origin: top right;
+  pointer-events: none;
+}
+
+.Practice_inner__PPKI2 {
+  position: relative;
+  z-index: 1;
+  width: min(calc(100% - var(--rail-safe-area) - 80px), var(--content-max-width));
+  height: 100%;
+  margin: 0 auto 0
+    calc(var(--rail-safe-area) + max(40px, calc((100% - var(--rail-safe-area) - var(--content-max-width)) / 2)));
+  padding: var(--space-3xl) 0 var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+}
+
+.Practice_grid__H2hMl {
+  width: 100%;
+  flex: 1 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-gap: var(--space-xl);
+  gap: var(--space-xl);
+}
+
+.Practice_card__TPrms {
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(28px, 6%, 48px) clamp(24px, 7%, 44px);
+}
+
+.Practice_card__TPrms::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("/images/torn-paper.webp");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(0 18px 32px rgba(var(--black-rgb), 0.4));
+}
+
+.Practice_card__TPrms:nth-child(2)::before,
+.Practice_card__TPrms:nth-child(3)::before {
+  transform: scaleX(-1);
+}
+
+.Practice_cardContent__1XZEL {
+  position: relative;
+  z-index: 1;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.Practice_title__cN1MX {
+  margin: 0;
+  padding: 0.12em 0.08em;
+  font-family: var(--font-cormorant), serif;
+  font-size: var(--font-size-heading-sm);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  color: #2c2015;
+}
+
+.Practice_divider__eO_j3 {
+  width: 44px;
+  height: 1px;
+  margin: var(--space-md) 0;
+  background: rgba(120, 86, 42, 0.4);
+}
+
+.Practice_text__a3i8w {
+  max-width: 320px;
+  margin: 0;
+  font-family: var(--font-archivo), sans-serif;
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-body);
+  letter-spacing: 0;
+  color: rgba(44, 32, 21, 0.8);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .Practice_sequenceActive__TNmw5 .Practice_title__cN1MX {
+    animation: Practice_practiceTypewriter__QYrtQ 1.7s steps(48, end) both;
+  }
+
+  .Practice_sequenceActive__TNmw5 .Practice_divider__eO_j3 {
+    opacity: 0;
+    transform: scaleX(0.4);
+    animation: Practice_practiceDividerReveal__CgX9f 300ms ease-out 1.55s both;
+  }
+
+  .Practice_sequenceActive__TNmw5 .Practice_text__a3i8w {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: Practice_practiceDescriptionReveal__elXsM 500ms cubic-bezier(0.22, 1, 0.36, 1) 1.7s both;
+  }
+
+  @keyframes Practice_practiceTypewriter__QYrtQ {
+    from { -webkit-clip-path: inset(-0.15em 100% -0.15em -0.1em); clip-path: inset(-0.15em 100% -0.15em -0.1em); }
+    to { -webkit-clip-path: inset(-0.15em -0.1em -0.15em -0.1em); clip-path: inset(-0.15em -0.1em -0.15em -0.1em); }
+  }
+
+  @keyframes Practice_practiceDividerReveal__CgX9f {
+    to { opacity: 1; transform: scaleX(1); }
+  }
+
+  @keyframes Practice_practiceDescriptionReveal__elXsM {
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@media (max-width: 1180px) {
+  .Practice_inner__PPKI2 {
+    width: min(calc(100% - 80px), var(--content-max-width));
+    margin: 0 auto;
+  }
+
+  .Practice_title__cN1MX {
+    font-size: var(--font-size-heading-xs, 22px);
+  }
+
+  .Practice_text__a3i8w {
+    font-size: var(--font-size-body-sm);
+  }
+}
+
+@media (max-width: 860px) {
+  .Practice_section__eUN5U {
+    height: auto;
+    overflow: visible;
+    background: var(--scene-background);
+    scroll-margin-top: var(--header-height);
+  }
+
+  .Practice_pageNumber__nmoqc {
+    display: none;
+  }
+
+  .Practice_inner__PPKI2 {
+    width: calc(100% - 32px);
+    height: auto;
+    padding: calc(var(--header-height) + var(--space-md)) 0 var(--space-2xl);
+  }
+
+  .Practice_grid__H2hMl {
+    flex: none;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .Practice_card__TPrms {
+    flex: none;
+    padding: 40px 28px;
+  }
+
+  .Practice_cardContent__1XZEL {
+    max-width: none;
+  }
+
+  .Practice_title__cN1MX {
+    font-size: 22px;
+  }
+
+  .Practice_text__a3i8w {
+    max-width: 320px;
+    font-size: var(--font-size-body-sm);
+    line-height: 1.48;
+  }
+
+}
+
+@media (max-height: 760px) and (min-width: 861px) {
+  .Practice_inner__PPKI2 {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+  }
+
+  .Practice_title__cN1MX {
+    font-size: var(--font-size-body-lg);
+  }
+
+  .Practice_divider__eO_j3 {
+    margin: var(--space-sm) 0;
+  }
+
+  .Practice_text__a3i8w {
+    font-size: var(--font-size-body-sm);
+    line-height: 1.5;
+  }
+}
+
