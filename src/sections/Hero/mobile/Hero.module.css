@@ -106,6 +106,10 @@
   text-transform: uppercase;
 }
 
+.credential:last-child {
+  flex-basis: 100%;
+}
+
 .credential::before {
   width: 18px;
   height: 1px;

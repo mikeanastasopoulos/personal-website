@@ -17,7 +17,7 @@ npm run lint          # ESLint
 npm run dev:clean   # wipe .next, then dev
 ```
 
-There are no environment variables — the whole site is static content + client-side interaction, nothing calls an external API or database.
+Content is server-rendered with client-side interaction. The contact form posts to Web3Forms and uses `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`; see Contact form delivery below.
 
 ---
 
@@ -182,3 +182,20 @@ Only load additional weights if you're actually going to use them — two previo
 See `docs/spyrosFeConventions.md` for the full house style (SOLID-ish component boundaries, `useEffect` reserved for real browser/third-party side effects, no derived state via effects, etc.) — most of it is enforced directly by `.eslintrc.json` (`no-restricted-syntax` flags bare `useEffect`/`useLayoutEffect` unless justified with an inline comment). `docs/editorialExperience.md` has the original design rationale for the desktop scene system.
 
 `app/[locale]/layout.tsx` is the one intentional exception to "no mixed default/named exports" — Next's App Router requires `generateStaticParams`/`generateMetadata` as named exports alongside the default-exported layout component.
+
+## Contact form delivery
+
+The bilingual contact form posts directly to Web3Forms. No npm email library is required.
+Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` to a
+Web3Forms access key created for the client's receiving inbox, then restart the dev server.
+Set the same variable in hosting and rebuild for a deployed test.
+
+The recipient is referenced from `siteConfig.email` in `src/features/ContactForm/config.ts`.
+Web3Forms determines the actual destination from the key: when switching
+inboxes, update `siteConfig.email` AND replace the key with one linked to that inbox.
+The existing public email/phone links remain the client's contact details.
+Without a key, submission reports failure and does not claim to send mail.
+
+To verify delivery, submit the form with a real reply address, check the receiving inbox
+(and spam), and verify Reply targets the submitted address. Required first name, last name, phone, email and message fields, pending,
+success and failure states are shared by desktop and mobile forms.

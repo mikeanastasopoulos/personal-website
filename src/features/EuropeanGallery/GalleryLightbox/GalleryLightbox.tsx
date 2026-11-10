@@ -7,6 +7,7 @@ import type { EuropeanPhoto } from "@/i18n/types";
 import styles from "./GalleryLightbox.module.css";
 
 type GalleryLightboxProps = {
+  preload: boolean;
   dialogRef: RefObject<HTMLDialogElement>;
   photos: EuropeanPhoto[];
   selectedIndex: number;
@@ -22,13 +23,13 @@ type GalleryLightboxProps = {
 };
 
 const GalleryLightbox = ({
-  dialogRef, photos, selectedIndex, label, previousLabel, nextLabel, closeLabel,
+  preload, dialogRef, photos, selectedIndex, label, previousLabel, nextLabel, closeLabel,
   enlargeLabel, onMove, onSelect, onRequestClose, onClose,
 }: GalleryLightboxProps) => {
   const touchRef = useRef<{ x: number; y: number } | null>(null);
-  const [loadedPhotoId, setLoadedPhotoId] = useState<string | null>(null);
+  const [loadedPhotoIds, setLoadedPhotoIds] = useState<Set<string>>(() => new Set());
   const photo = photos[selectedIndex];
-  const isLoaded = photo?.id === loadedPhotoId;
+  const isLoaded = !!photo && loadedPhotoIds.has(photo.id);
   const counter = `${String(selectedIndex + 1).padStart(2, "0")} / ${String(photos.length).padStart(2, "0")}`;
 
   const handleKeyDown = (event: KeyboardEvent<HTMLDialogElement>) => {
@@ -98,16 +99,20 @@ const GalleryLightbox = ({
             onTouchCancel={() => { touchRef.current = null; }}
           >
             {!isLoaded && <span className={styles.loading} aria-hidden="true"><LoaderCircle size={24} /></span>}
-            <Image
-              key={photo.id}
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              sizes="(max-width: 767px) 95vw, (max-width: 1199px) 85vw, 1000px"
-              className={styles.photo}
-              data-loaded={isLoaded}
-              onLoad={() => setLoadedPhotoId(photo.id)}
-            />
+            {preload && photos.map((item) => (
+              <Image
+                key={item.id}
+                src={item.src}
+                alt={item.id === photo.id ? item.alt : ""}
+                aria-hidden={item.id !== photo.id}
+                fill
+                loading="eager"
+                sizes="(max-width: 767px) 95vw, (max-width: 1199px) 85vw, 1000px"
+                className={styles.photo}
+                data-loaded={loadedPhotoIds.has(item.id) && item.id === photo.id}
+                onLoad={() => setLoadedPhotoIds((previous) => new Set(previous).add(item.id))}
+              />
+            ))}
           </figure>
           <button type="button" className={`${styles.control} ${styles.next}`} onClick={() => onMove(1)} aria-label={nextLabel}>
             <ArrowRight size={21} aria-hidden="true" />

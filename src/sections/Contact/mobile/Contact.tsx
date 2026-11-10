@@ -1,6 +1,5 @@
-import { ArrowRight } from "lucide-react";
 import type { SiteDictionary } from "@/i18n/types";
-import Button from "@/components/ui/Button/Button";
+import ContactForm from "@/features/ContactForm/ContactForm";
 import { siteConfig } from "@/seo/siteConfig";
 import styles from "./Contact.module.css";
 
@@ -22,11 +21,8 @@ const Contact = ({ content, footerContent }: ContactProps) => {
 
         <p className={styles.text}>{content.invitation}</p>
 
-        <div>
-          <Button variant="primary" href={`mailto:${siteConfig.email}`}>
-            {content.cta} <ArrowRight size={14} />
-          </Button>
-        </div>
+
+        <ContactForm content={content.form} />
 
         <div className={styles.rows}>
           <div className={styles.row}>

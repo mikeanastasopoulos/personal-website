@@ -20,17 +20,18 @@
 }
 
 .slide[data-photo="secondary"] {
-  left: 10%;
+  left: 6%;
+  right: -6%;
   mask-image: linear-gradient(90deg, transparent, var(--color-black) 12%);
 }
 
 .slide[data-photo="secondary"] .photo {
-  object-position: center 38%;
+  object-position: 40% 76%;
 }
 
 .controls {
   position: absolute;
-  left: 50%;
+  left: 56%;
   bottom: var(--space-lg);
   z-index: 1;
   display: flex;
@@ -82,7 +83,18 @@
     filter: brightness(1.02) contrast(1.02) saturate(0.96);
   }
 
+  .slide[data-photo="secondary"] {
+    left: 0;
+    right: 0;
+    mask-image: none;
+  }
+
+  .slide[data-photo="secondary"] .photo {
+    object-position: 65% 52%;
+  }
+
   .controls {
+    left: 50%;
     bottom: calc(12svh + var(--space-md));
   }
 }
