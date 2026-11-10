@@ -9,7 +9,7 @@ const TOUCH_INTENT_DISTANCE = 42;
 type Direction = 1 | -1;
 
 type UseSceneGesturesOptions = {
-  rootRef: RefObject<HTMLElement>;
+  rootRef: RefObject<HTMLElement | null>;
   onNavigate: (direction: Direction) => void;
   onNavigateTo: (targetIndex: number) => void;
   sceneCount: number;

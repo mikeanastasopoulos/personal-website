@@ -12,14 +12,8 @@ export const generateMetadata = async ({
 }): Promise<Metadata> => {
   const { locale: rawLocale } = await params;
   const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
-  const dict = getDictionary(locale);
 
-  return buildPageMetadata({
-    locale,
-    path: "about",
-    title: `${dict.about.label} — ${dict.nav.logoTitle}`,
-    description: dict.about.bio,
-  });
+  return buildPageMetadata({ locale, path: "about" });
 };
 
 const Page = async ({

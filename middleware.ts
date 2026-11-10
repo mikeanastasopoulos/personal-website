@@ -8,7 +8,7 @@ export const middleware = (request: NextRequest) => {
 
     url.pathname = `/${defaultLocale}`;
 
-    return NextResponse.redirect(url);
+    return NextResponse.redirect(url, 308);
   }
   return NextResponse.next();
 };

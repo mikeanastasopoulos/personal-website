@@ -16,9 +16,9 @@ const Contact = ({ content, footerContent }: ContactProps) => {
           <span className={styles.eyebrow} data-motion-layer="secondary">
             {content.label}
           </span>
-          <h2 className={styles.title} data-motion-layer="primary">
+          <h1 className={styles.title} data-motion-layer="primary">
             {content.title}
-          </h2>
+          </h1>
 
           <p className={styles.text} data-motion-layer="secondary">
             {content.text}

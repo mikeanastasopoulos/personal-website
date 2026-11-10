@@ -18,6 +18,7 @@ const Practice = ({ content }: PracticeProps) => {
       className={`${styles.section} ${isSequenceActive ? styles.sequenceActive : ""}`}
     >
       <div data-section-content className={styles.inner}>
+        <h1 className="sr-only">{content.label}</h1>
         <div className={styles.grid} data-motion-layer="primary">
           {content.items.map((item) => (
             <article key={item.number} className={styles.card}>

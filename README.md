@@ -1,6 +1,6 @@
 # Michalis Anastasopoulos — Website
 
-Bilingual (Greek/English) marketing site for a criminal-defence attorney in Athens. Next.js 14 App Router, server-rendered content, with a client-side "editorial" scene controller on desktop and a plain stacked scroll page on mobile.
+Bilingual (Greek/English) marketing site for a criminal-defence attorney in Athens. Next.js 15 App Router with React 19, server-rendered content, with a client-side "editorial" scene controller on desktop and a plain stacked scroll page on mobile.
 
 Live: `https://www.anastasopoulos-law.gr` (Vercel).
 
@@ -9,12 +9,13 @@ Live: `https://www.anastasopoulos-law.gr` (Vercel).
 ## 1. Quick start
 
 ```bash
+nvm use            # Node 24; Node 22+ is required
 npm install
 npm run dev        # http://localhost:3000  (redirects to /el)
 npm run build       # production build
 npm run start        # serve the production build locally
 npm run lint          # ESLint
-npm run dev:clean   # wipe .next, then dev
+npm run dev:clean   # wipe .next-dev, then dev
 ```
 
 Content is server-rendered with client-side interaction. The contact form posts to Web3Forms and uses `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`; see Contact form delivery below.
@@ -25,7 +26,7 @@ Content is server-rendered with client-side interaction. The contact form posts 
 
 The site has **six content sections**, each with a real Next.js route: Hero (`/`), About (`/about`), Practice (`/practice`), Academic (`/academic`), European (`/european`), Contact (`/contact`), all under a `/[locale]` prefix (`el` or `en`).
 
-Every section is written **once**, as plain server-rendered React, in `src/sections/<Name>/`. Each section has two independent implementations — `desktop/` and `mobile/` — because the two experiences are structurally different (see below), not just CSS breakpoints of the same markup.
+Sections live in `src/sections/<Name>/`. Each section has two independent implementations — `desktop/` and `mobile/` — because the two experiences are structurally different (see below), not just CSS breakpoints of the same markup.
 
 **Both experiences are always mounted in the DOM at once.** `app/[locale]/layout.tsx` renders `<EditorialExperience>` (desktop) and `<MobileExperience>` (mobile) side by side. CSS (`display: none` at the 860px breakpoint, in each component's own `.module.css`) shows exactly one. This means:
 - Editing desktop behavior never touches mobile, and vice versa.
@@ -65,12 +66,12 @@ src/
     getDictionary.ts       → locale → dictionary lookup
 
   seo/
-    siteConfig.ts          → name, email, phone, address, baseUrl (single source of truth)
+    siteConfig.ts          → name, email, phone, baseUrl (single source of truth)
     pageMetadata.ts         → buildPageMetadata() — canonical/hreflang/OG/Twitter for every page
-    jsonLd.ts                → Attorney structured data (schema.org)
+    jsonLd.ts                → LegalService and Person structured data (schema.org)
 
   appTheme/
-    fonts.ts                → next/font loads: Cormorant Garamond (display), Archivo (body/UI)
+    fonts.ts                → next/font/local: EB Garamond (display), Commissioner (body/UI)
     theme.css                 → design tokens: color, spacing, font-size, radius (see §5)
 
   components/
@@ -101,9 +102,7 @@ public/
   logo/logo.svg                 → header logo
 
 docs/
-  editorialExperience.md       → design notes for the desktop scene system
-  spyrosFeConventions.md         → house engineering conventions (SOLID, no useEffect for derived state, etc.) — the ESLint config in .eslintrc.json enforces parts of this
-  bookspine/                     → SVG mockups for the desktop side-rail "spine" visual (reference only, not imported by code)
+  font_end_rules.md            → frontend engineering conventions
 ```
 
 ---
@@ -137,9 +136,9 @@ All spacing, font sizes, colors, and radii are CSS custom properties on `:root`,
 --transition-fast                 (180ms — all small hover/focus interactions)
 ```
 
-Fonts (`src/appTheme/fonts.ts`, loaded via `next/font/google`):
-- **Cormorant Garamond** (`--font-cormorant`) — display/editorial headings and emphasis. Weights 400/500 + italic.
-- **Archivo** (`--font-archivo`) — everything else: body copy, nav, labels, buttons. Weights 400/500/600.
+Fonts (`src/appTheme/fonts.ts`, self-hosted via `next/font/local`):
+- **EB Garamond** (`--font-cormorant`) — display/editorial headings and emphasis. Weights 400/500 + italic.
+- **Commissioner** (`--font-archivo`) — everything else: body copy, nav, labels, buttons. Weights 400/500/600.
 
 Only load additional weights if you're actually going to use them — two previously-loaded families (Oswald, Anton) were removed because nothing referenced them; each unused weight is pure download cost.
 
@@ -151,11 +150,11 @@ Only load additional weights if you're actually going to use them — two previo
 
 **Change copy (any text on the site).** Edit `src/i18n/dictionaries/el.ts` and/or `en.ts`. The shape is enforced by `src/i18n/types.ts` (`SiteDictionary`) — TypeScript will error if the two dictionaries drift out of shape. Don't hand-insert spacing into strings (e.g. don't write `"ΤΟΜΕΙΣΔΡΑΣΤΗΡΙΟΤΗΤΑΣ"` or letter-by-letter spaced text) — write the real words with normal spaces and let CSS `letter-spacing`/`text-transform: uppercase` handle the visual styling.
 
-**Change contact details (email/phone/address).** `src/seo/siteConfig.ts` — this is the single source of truth, used by the Contact section, the header CTA, JSON-LD structured data, and OG metadata. The office `mapsUrl` is derived from the address fields here.
+**Change contact details (email/phone).** `src/seo/siteConfig.ts` — this is the single source of truth, used by the Contact section, the header CTA, JSON-LD structured data, and OG metadata. No office address is published in the current configuration.
 
 **Add a new section/route** (e.g. a "Testimonials" page):
 1. Add the route slug to `SCENE_ROUTES` in `src/features/EditorialExperience/routeOrder.ts` — sitemap and desktop scene navigation both derive from this list automatically.
-2. Create `app/[locale]/testimonials/page.tsx` — copy the pattern from an existing one (e.g. `app/[locale]/practice/page.tsx`): `generateMetadata` calling `buildPageMetadata({ locale, path: "testimonials", title, description })`, plus the page component rendering your new section.
+2. Create `app/[locale]/testimonials/page.tsx` — copy the pattern from an existing one (e.g. `app/[locale]/practice/page.tsx`): `generateMetadata` calling `buildPageMetadata({ locale, path: "testimonials" })` and adding localized titles/descriptions to `src/seo/pageCopy.ts`, plus the page component rendering your new section.
 3. Add `src/sections/Testimonials/desktop/Testimonials.tsx` and `mobile/Testimonials.tsx` (+ `.module.css` each), tagging animatable elements with `data-motion-layer` on the desktop version.
 4. Register it in both trees: add it to `sceneNavigationLinks` in `app/[locale]/layout.tsx` (desktop rail + header), and add `<Testimonials .../>` to the stack in `src/features/MobileExperience/MobileExperience.tsx`.
 5. Add the section's content shape to `SiteDictionary` in `src/i18n/types.ts`, and fill it in both `el.ts`/`en.ts`.
@@ -166,7 +165,7 @@ Only load additional weights if you're actually going to use them — two previo
 
 **Swap/update an image.** Drop the file in `public/images/`, reference it as `/images/filename.ext` in the section's `.tsx` via `next/image`. Only the Hero image should carry `priority` (it's the LCP element); everything else should lazy-load normally. Prefer supplying pre-optimized WebP/AVIF source files — Next's built-in image optimizer re-encodes on the fly, but starting from an already-bloated original (there's a 1.9MB PNG hero image in `public/images/hero/main_hero.png` as of this writing) still costs more at build/serve time than starting clean.
 
-**Update SEO for one page.** Each `app/[locale]/<route>/page.tsx` has its own `generateMetadata` calling `buildPageMetadata()` (`src/seo/pageMetadata.ts`) — edit the `title`/`description` there. Canonical URL, hreflang alternates (`el`/`en`/`x-default`), Open Graph, and Twitter card are all generated from that one call; you never write them by hand per-page.
+**Update SEO for one page.** Each `app/[locale]/<route>/page.tsx` has its own `generateMetadata` calling `buildPageMetadata()` (`src/seo/pageMetadata.ts`) — edit the localized `title`/`description` in `src/seo/pageCopy.ts`. Canonical URL, hreflang alternates (`el`/`en`/`x-default`), Open Graph, and Twitter card are all generated from that one call; you never write them by hand per-page.
 
 ---
 
@@ -179,7 +178,7 @@ Only load additional weights if you're actually going to use them — two previo
 
 ## 8. Conventions
 
-See `docs/spyrosFeConventions.md` for the full house style (SOLID-ish component boundaries, `useEffect` reserved for real browser/third-party side effects, no derived state via effects, etc.) — most of it is enforced directly by `.eslintrc.json` (`no-restricted-syntax` flags bare `useEffect`/`useLayoutEffect` unless justified with an inline comment). `docs/editorialExperience.md` has the original design rationale for the desktop scene system.
+See `docs/font_end_rules.md` for frontend conventions. The ESLint configuration extends Next.js Core Web Vitals and TypeScript rules.
 
 `app/[locale]/layout.tsx` is the one intentional exception to "no mixed default/named exports" — Next's App Router requires `generateStaticParams`/`generateMetadata` as named exports alongside the default-exported layout component.
 
@@ -199,3 +198,26 @@ Without a key, submission reports failure and does not claim to send mail.
 To verify delivery, submit the form with a real reply address, check the receiving inbox
 (and spam), and verify Reply targets the submitted address. Required first name, last name, phone, email and message fields, pending,
 success and failure states are shared by desktop and mobile forms.
+
+## Release checks and SEO
+
+Run `npm run lint` and `npm run build` before pushing. Generated Next.js output,
+TypeScript caches, macOS metadata and local environment files are ignored.
+Use `.env.example` as the configuration template; `.env.local` stays on your machine.
+
+Search titles and descriptions for all twelve localized URLs live in
+`src/seo/pageCopy.ts`. Canonicals and language alternates are generated by
+`src/seo/pageMetadata.ts`; `app/sitemap.ts` and `app/robots.ts` expose discovery URLs.
+Search themes are criminal defence / ποινική υπεράσπιση, criminal law / ποινικό δίκαιο,
+Athens / Αθήνα, the lawyer’s name, and the practice areas already described on the site.
+Do not add meta-keyword tags or unsupported claims about qualifications or results.
+
+After deployment, submit `/sitemap.xml` in Google Search Console and inspect both
+language homepages. Verify the configured canonical domain is the production domain,
+check the social preview and test real contact-form delivery. Structured data uses
+only published facts; a complete office address is needed before adding location
+markup for Local Business rich-result eligibility.
+
+Security overrides pin patched PostCSS and the lint parser’s minimatch dependency.
+Review these pins when upgrading Next.js or TypeScript ESLint; remove them once the
+upstream dependency ranges resolve to patched releases without overrides.

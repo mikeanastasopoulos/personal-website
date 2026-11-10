@@ -10,6 +10,15 @@
   --color-text: #ede7d9;
   --color-white: #fff;
 
+  --button-gold-text: #101722;
+  --button-gold-border: rgba(255, 240, 199, 0.24);
+  --button-gold-background: linear-gradient(180deg, #F0D296 0%, #DBB676 49%, #CAA063 100%);
+  --button-gold-background-hover: linear-gradient(180deg, #FFE0A3 0%, #E8C488 55%, #D4AA69 100%);
+  --button-gold-background-active: linear-gradient(180deg, #C59A5A 0%, #D2AA6E 100%);
+  --button-gold-shadow: inset 0 1px 0 #FFE3AE, 0 5px 11px rgba(0, 0, 0, 0.33);
+  --button-gold-shadow-hover: inset 0 1px 0 #FFEFC5, 0 8px 20px rgba(0, 0, 0, 0.5);
+  --button-gold-shadow-active: inset 0 2px 6px rgba(57, 34, 11, 0.4), 0 1px 3px rgba(0, 0, 0, 0.33);
+
   --font-cormorant: var(--font-serif-greek);
   --font-archivo: var(--font-sans-greek);
 

@@ -3,6 +3,7 @@ import { HERO_PHOTOS } from "@/features/HeroPortraits/model/photos";
 import { locales, defaultLocale, type Locale } from "@/i18n/locales";
 import type { SceneRoute } from "@/features/EditorialExperience/routeOrder";
 import { siteConfig } from "./siteConfig";
+import { pageCopy } from "./pageCopy";
 
 const MAX_DESCRIPTION_LENGTH = 155;
 export const DEFAULT_OG_IMAGE = `${siteConfig.baseUrl}${HERO_PHOTOS[0].src}`;
@@ -20,8 +21,6 @@ const localizedPath = (locale: Locale, path: SceneRoute): string =>
 type BuildPageMetadataArgs = {
   locale: Locale;
   path: SceneRoute;
-  title: string;
-  description: string;
   image?: string;
 };
 
@@ -33,16 +32,17 @@ type BuildPageMetadataArgs = {
 export const buildPageMetadata = ({
   locale,
   path,
-  title,
-  description,
   image = DEFAULT_OG_IMAGE,
 }: BuildPageMetadataArgs): Metadata => {
+  const { title, description } = pageCopy[locale][path];
   const url = `${siteConfig.baseUrl}${localizedPath(locale, path)}`;
   const truncatedDescription = truncateDescription(description);
 
   return {
     title,
     description: truncatedDescription,
+    authors: [{ name: siteConfig.name[locale], url: `${siteConfig.baseUrl}/${locale}/about` }],
+    robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
     alternates: {
       canonical: localizedPath(locale, path),
       languages: {
@@ -55,9 +55,10 @@ export const buildPageMetadata = ({
       description: truncatedDescription,
       url,
       siteName: siteConfig.name[locale],
-      images: [{ url: image, width: 1024, height: 1536 }],
+      images: [{ url: image, width: 1024, height: 1536, alt: siteConfig.name[locale] }],
       locale: locale === "el" ? "el_GR" : "en_US",
-      type: "profile",
+      alternateLocale: [locale === "el" ? "en_US" : "el_GR"],
+      type: "website",
     },
     twitter: {
       card: "summary_large_image",

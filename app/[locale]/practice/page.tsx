@@ -12,16 +12,8 @@ export const generateMetadata = async ({
 }): Promise<Metadata> => {
   const { locale: rawLocale } = await params;
   const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
-  const dict = getDictionary(locale);
 
-  return buildPageMetadata({
-    locale,
-    path: "practice",
-    title: `${dict.practice.items.map((item) => item.title).join(", ")} — ${dict.nav.logoTitle}`,
-    description: `${dict.practice.label}: ${dict.practice.items
-      .map((item) => item.title)
-      .join(", ")}.`,
-  });
+  return buildPageMetadata({ locale, path: "practice" });
 };
 
 const Page = async ({

@@ -16,10 +16,10 @@ const European = ({ content }: EuropeanProps) => {
             {content.affiliationLabel}
           </div>
 
-          <h2 className={styles.title} data-motion-layer="primary">
+          <h1 className={styles.title} data-motion-layer="primary">
             <span>{content.titleL1}</span>{" "}
             <em>{content.titleL2}</em>
-          </h2>
+          </h1>
 
           <p className={styles.text} data-motion-layer="secondary">
             {content.text}

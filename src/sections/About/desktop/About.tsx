@@ -11,9 +11,9 @@ const About = ({ content }: AboutProps) => {
     <section data-editorial-scene className={styles.section}>
       <div data-section-content className={styles.inner}>
         <div className={styles.content}>
-          <h2 className={styles.title} data-motion-layer="primary">
+          <h1 className={styles.title} data-motion-layer="primary">
             {content.quote}
-          </h2>
+          </h1>
 
           <div className={styles.biography} data-motion-layer="secondary">
             <p className={styles.bio}>{content.bio}</p>

@@ -23,8 +23,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: clamp(280px, 78vw, 360px);
-  padding: 48px clamp(24px, 7vw, 44px);
+  min-height: clamp(220px, 60vw, 270px);
+  padding: 36px clamp(24px, 7vw, 44px);
 }
 
 .card::before {

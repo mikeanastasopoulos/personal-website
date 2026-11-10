@@ -7,7 +7,6 @@ const sitemap = (): MetadataRoute.Sitemap => {
   return SCENE_ROUTES.flatMap((route) =>
     locales.map((locale) => ({
       url: `${siteConfig.baseUrl}${buildScenePath(locale, route)}`,
-      lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: route === '' ? 1 : 0.8,
       alternates: {

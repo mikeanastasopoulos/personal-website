@@ -1,4 +1,4 @@
-const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
+import { PHASE_DEVELOPMENT_SERVER } from "next/constants.js";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,7 +9,9 @@ const nextConfig = {
 };
 
 // Keep production checks from replacing files used by the live development server.
-module.exports = (phase) => ({
+const config = (phase) => ({
   ...nextConfig,
   distDir: phase === PHASE_DEVELOPMENT_SERVER ? ".next-dev" : ".next",
 });
+
+export default config;

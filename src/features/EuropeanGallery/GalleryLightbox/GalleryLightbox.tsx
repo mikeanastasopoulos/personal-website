@@ -8,7 +8,7 @@ import styles from "./GalleryLightbox.module.css";
 
 type GalleryLightboxProps = {
   preload: boolean;
-  dialogRef: RefObject<HTMLDialogElement>;
+  dialogRef: RefObject<HTMLDialogElement | null>;
   photos: EuropeanPhoto[];
   selectedIndex: number;
   label: string;

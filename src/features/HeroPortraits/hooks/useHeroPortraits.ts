@@ -5,7 +5,7 @@ import { HERO_PHOTOS } from "../model/photos";
 
 const ROTATION_INTERVAL_MS = 8000;
 
-export const useHeroPortraits = (rootRef: RefObject<HTMLDivElement>) => {
+export const useHeroPortraits = (rootRef: RefObject<HTMLDivElement | null>) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [secondaryReady, setSecondaryReady] = useState(false);
   const [environment, setEnvironment] = useState({ visible: false, tabVisible: false, reducedMotion: true });
